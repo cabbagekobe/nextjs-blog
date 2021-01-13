@@ -5,10 +5,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint ."
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.13.0",
+    "@typescript-eslint/parser": "^4.13.0",
     "date-fns": "^2.16.1",
+    "eslint": "^7.17.0",
+    "eslint-plugin-react": "^7.22.0",
     "gray-matter": "^4.0.2",
     "grob": "^1.0.0",
     "next": "^10.0.0",

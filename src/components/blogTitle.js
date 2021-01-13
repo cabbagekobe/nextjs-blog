@@ -1,4 +1,9 @@
-import Link from 'next/link'
+import Link from "next/link";
+
+BlogTitle.propTypes = {
+  blogTitle: PropTypes.string,
+  href: PropTypes.string
+};
 
 export default function BlogTitle({ blogTitle, href }) {
   return (
@@ -7,5 +12,5 @@ export default function BlogTitle({ blogTitle, href }) {
         <a>{blogTitle}</a>
       </Link>
     </h3>
-  )
+  );
 }

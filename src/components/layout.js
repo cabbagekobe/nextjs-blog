@@ -1,12 +1,12 @@
-import Head from 'next/head'
-import styles from './layout.module.scss'
-import utilStyles from '../styles/utils.module.scss'
-import Link from 'next/link'
+import Head from "next/head";
+import styles from "./layout.module.scss";
+import utilStyles from "../styles/utils.module.scss";
+import Link from "next/link";
 
-const name = 'cabbagekobe'
-export const siteTitle = 'cabbaekobe.info'
+const name = "cabbagekobe";
+export const siteTitle = "cabbaekobe.info";
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home }: any) {
   return (
     <div className={styles.container}>
       <Head>
@@ -54,5 +54,5 @@ export default function Layout({ children, home }) {
         </p>
       </footer>
     </div>
-  )
+  );
 }

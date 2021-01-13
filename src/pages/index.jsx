@@ -1,12 +1,12 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import Date from '../components/date'
-import BlogTitle from '../components/blogTitle'
+import Head from "next/head";
+import Link from "next/link";
+import Date from "../components/date";
+import BlogTitle from "../components/blogTitle";
 
-import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.scss'
+import Layout, { siteTitle } from "../components/layout";
+import utilStyles from "../styles/utils.module.scss";
 
-import { getSortedPostsData } from '../lib/posts'
+import { getSortedPostsData } from "../lib/posts";
 
 export default function Home({ allPostsData }) {
   return (
@@ -31,15 +31,15 @@ export default function Home({ allPostsData }) {
         </ul>
       </section>
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+  const allPostsData = getSortedPostsData();
 
   return {
     props: {
       allPostsData
     }
-  }
+  };
 }
