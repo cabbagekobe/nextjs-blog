@@ -1,12 +1,20 @@
 import Head from "next/head";
+import Link from "next/link";
+
 import styles from "./layout.module.scss";
 import utilStyles from "../styles/utils.module.scss";
-import Link from "next/link";
+
+import PropTypes from "prop-types";
+
+Layout.propTypes = {
+  children: PropTypes.any,
+  home: PropTypes.any
+};
 
 const name = "cabbagekobe";
 export const siteTitle = "cabbaekobe.info";
 
-export default function Layout({ children, home }: any) {
+export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -37,14 +45,6 @@ export default function Layout({ children, home }: any) {
       <main>
         {children}
       </main>
-
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
 
       <footer className={styles.footer}>
         <p className={utilStyles.headingSd}>

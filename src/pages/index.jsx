@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+
 import Date from "../components/date";
 import BlogTitle from "../components/blogTitle";
 
