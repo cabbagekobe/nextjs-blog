@@ -44,6 +44,14 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
+
+      <footer className={styles.footer}>
+        <p className={utilStyles.headingSd}>
+          <a href="https://twitter.com/cabbagekobe">
+            &copy; {name}
+          </a>
+        </p>
+      </footer>
     </div>
   )
 }

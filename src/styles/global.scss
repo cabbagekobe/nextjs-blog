@@ -1,5 +1,6 @@
 @import "_import/variable";
 @import "_import/typo";
+@import "_import/typo";
 
 * {
   &, &:before, &:after {
@@ -42,7 +43,7 @@ a {
   }
 
   &:active {
-  }
+}
 
   &:visited {
   }
