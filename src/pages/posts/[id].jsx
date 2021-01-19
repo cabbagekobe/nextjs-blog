@@ -7,9 +7,6 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 import Date from "../../components/date";
 import BlogTitle from "../../components/blogTitle";
 
-import styles from "../../components/layout.module.scss";
-import utilStyles from "../../styles/utils.module.scss";
-
 export default function Post({ postData }) {
   return (
     <Layout>
@@ -27,7 +24,7 @@ export default function Post({ postData }) {
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
 
-      <div className={styles.backToHome}>
+      <div className="">
         <Link href="/">
           <a>← Back to home</a>
         </Link>

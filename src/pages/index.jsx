@@ -5,7 +5,6 @@ import Date from "../components/date";
 import BlogTitle from "../components/blogTitle";
 
 import Layout, { siteTitle } from "../components/layout";
-import utilStyles from "../styles/utils.module.scss";
 
 import { getSortedPostsData } from "../lib/posts";
 
@@ -18,10 +17,10 @@ export default function Home({ allPostsData }) {
         </title>
       </Head>
 
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <ul className={utilStyles.list}>
+      <section className="">
+        <ul className="">
           {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
+            <li className="" key={id}>
               <BlogTitle blogTitle={title} href={`/posts/${id}`} />
 
               <Date dateString={date} />

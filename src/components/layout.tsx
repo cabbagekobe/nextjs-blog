@@ -4,9 +4,6 @@ import Link from "next/link";
 import Header from "./Header";
 import Footer from "./Footer";
 
-import styles from "./layout.module.scss";
-import utilStyles from "../styles/utils.module.scss";
-
 import PropTypes from "prop-types";
 
 Layout.propTypes = {
@@ -19,7 +16,7 @@ export const siteTitle = "cabbaekobe.info";
 
 export default function Layout({ children, home }: any) {
   return (
-    <div className={styles.container}>
+    <div className="">
       <Head>
         <link rel="icon" href="/favicon.ico" />
 
