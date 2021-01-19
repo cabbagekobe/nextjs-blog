@@ -1,26 +1,29 @@
-import "../styles/global.scss";
+import '@/css/tailwind.css'
+import Head from 'next/head'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import SectionContainer from '@/components/SectionContainer'
 
-import React from "react";
-import App, { Container } from "next/app";
+export default function App({ Component, pageProps }) {
+  return (
+    <div className="antialiased">
+      <Head>
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      </Head>
 
-export default class MyApp extends App {
-  static async getInitialProps({ Component, router, ctx }) {
-    let pageProps = {};
+      <SectionContainer>
+        <Header />
+      </SectionContainer>
 
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
+      <SectionContainer>
+        <main>
+          <Component {...pageProps} />
+        </main>
+      </SectionContainer>
 
-    return {
-      pageProps
-    };
-  }
-
-  render () {
-    const { Component, pageProps } = this.props;
-
-    return (
-      <Component {...pageProps} />
-    );
-  }
+      <SectionContainer>
+        <Footer />
+      </SectionContainer>
+    </div>
+  )
 }
