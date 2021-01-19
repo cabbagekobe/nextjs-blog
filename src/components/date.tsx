@@ -5,7 +5,7 @@ Date.propTypes = {
   dateString: PropTypes.string
 };
 
-export default function Date({ dateString }) {
+export default function Date({ dateString }: any) {
   const date = parseISO(dateString);
 
   return (

@@ -6,7 +6,7 @@ BlogTitle.propTypes = {
   href: PropTypes.string
 };
 
-export default function BlogTitle({ blogTitle, href }) {
+export default function BlogTitle({ blogTitle, href }: any) {
   return (
     <h3>
       <Link href={href}>

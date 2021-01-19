@@ -30,7 +30,7 @@ export function getSortedPostsData() {
   });
 
   // 投稿を日付でソートする
-  return allPostsData.sort((a, b) => {
+  return allPostsData.sort((a: any, b: any) => {
     if (a.date < b.date) {
       return 1;
     } else {
@@ -63,7 +63,7 @@ export function getAllPostIds() {
     };
   });
 }
-export async function getPostData(id) {
+export async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 

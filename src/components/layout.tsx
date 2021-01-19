@@ -17,7 +17,7 @@ Layout.propTypes = {
 const name = "cabbagekobe";
 export const siteTitle = "cabbaekobe.info";
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home }: any) {
   return (
     <div className={styles.container}>
       <Head>
