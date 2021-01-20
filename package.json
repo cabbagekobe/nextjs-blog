@@ -28,9 +28,15 @@
     "react": "^16.14.0",
     "react-dom": "16.13.1",
     "react-twitter-embed": "^3.0.3",
+    "rehype-stringify": "^8.0.0",
     "remark": "^13.0.0",
+    "remark-extract-frontmatter": "^3.1.0",
     "remark-html": "^13.0.1",
-    "webpack": ">=2"
+    "remark-preset-gfm": "^1.0.1",
+    "remark-rehype": "^8.0.0",
+    "unified": "^9.2.0",
+    "webpack": ">=2",
+    "yaml": "^1.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

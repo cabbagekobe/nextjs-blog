@@ -5,6 +5,14 @@ import matter from "gray-matter";
 import remark from "remark";
 import html from "remark-html";
 
+import unified from 'unified';
+import yaml from 'yaml';
+import remarkParse from 'remark-parse';
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkExtractFrontmatter from 'remark-extract-frontmatter';
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
+
 const postsDirectory = path.join(process.cwd(), "src/posts");
 
 export function getSortedPostsData() {
@@ -71,10 +79,28 @@ export async function getPostData(id: string) {
   const matterResult = matter(fileContents);
 
   // マークダウンを HTML 文字列に変換するために remark を使う
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  // const processedContent = await remark()
+  //   .use(html)
+  //   .process(matterResult.content);
+  // const contentHtml = processedContent.toString();
+
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkFrontmatter, [{
+      type: 'yaml',
+      marker: '-',
+      anywhere: false
+    }])
+    .use(remarkExtractFrontmatter, {
+      yaml: yaml.parse,
+      name: 'frontMatter'
+    })
+    .use(remarkRehype)
+    .use(rehypeStringify);
+
+  const result = await processor.process(fileContents);
+
+  const contentHtml = result.contents;
 
   // データを id および contentHtml と組み合わせる
   return {
