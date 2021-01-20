@@ -7,6 +7,10 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 import Date from "../../components/date";
 import BlogTitle from "../../components/blogTitle";
 
+export const config = {
+  unstable_runtimeJS: false
+}
+
 export default function Post({ postData }) {
   return (
     <Layout>

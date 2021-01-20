@@ -8,10 +8,11 @@ import html from "remark-html";
 import unified from 'unified';
 import yaml from 'yaml';
 import remarkParse from 'remark-parse';
-import remarkFrontmatter from 'remark-frontmatter';
 import remarkExtractFrontmatter from 'remark-extract-frontmatter';
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
+
+const remarkFrontmatter = require('remark-frontmatter')
 
 const postsDirectory = path.join(process.cwd(), "src/posts");
 

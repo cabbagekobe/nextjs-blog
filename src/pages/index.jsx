@@ -8,6 +8,10 @@ import Layout, { siteTitle } from "../components/layout";
 
 import { getSortedPostsData } from "../lib/posts";
 
+export const config = {
+  unstable_runtimeJS: false
+}
+
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
