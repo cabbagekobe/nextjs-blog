@@ -5,14 +5,14 @@ import matter from "gray-matter";
 import remark from "remark";
 import html from "remark-html";
 
-import unified from 'unified';
-import yaml from 'yaml';
-import remarkParse from 'remark-parse';
-import remarkExtractFrontmatter from 'remark-extract-frontmatter';
-import remarkRehype from 'remark-rehype';
-import rehypeStringify from 'rehype-stringify';
+import unified from "unified";
+import yaml from "yaml";
+import remarkParse from "remark-parse";
+import remarkExtractFrontmatter from "remark-extract-frontmatter";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
 
-const remarkFrontmatter = require('remark-frontmatter')
+const remarkFrontmatter = require("remark-frontmatter");
 
 const postsDirectory = path.join(process.cwd(), "src/posts");
 
@@ -88,13 +88,13 @@ export async function getPostData(id: string) {
   const processor = unified()
     .use(remarkParse)
     .use(remarkFrontmatter, [{
-      type: 'yaml',
-      marker: '-',
+      type: "yaml",
+      marker: "-",
       anywhere: false
     }])
     .use(remarkExtractFrontmatter, {
       yaml: yaml.parse,
-      name: 'frontMatter'
+      name: "frontMatter"
     })
     .use(remarkRehype)
     .use(rehypeStringify);

@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ['./src/pages/**/*.{js,mdx,ts,jsx,tsx}', './src/components/**/*.{js,mdx,ts,jsx,tsx}'],
+  purge: ["./src/pages/**/*.{js,mdx,ts,jsx,tsx}", "./src/components/**/*.{js,mdx,ts,jsx,tsx}"],
   darkMode: false,
   theme: {
     extend: {},
@@ -8,6 +8,6 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    require("@tailwindcss/typography"),
   ],
-}
+};
