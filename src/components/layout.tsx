@@ -16,7 +16,7 @@ export const siteTitle = "cabbaekobe.info";
 
 export default function Layout({ children, home }: any) {
   return (
-    <div className="">
+    <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
 
@@ -34,13 +34,15 @@ export default function Layout({ children, home }: any) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <Header />
+      <div className="flex flex-col min-h-screen">
+        <Header />
 
-      <main className="prose prose-sm max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-        {children}
-      </main>
+        <main className="container prose prose-sm max-w-3xl mx-auto ">
+          {children}
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 }

@@ -21,17 +21,15 @@ export default function Home({ allPostsData }) {
         </title>
       </Head>
 
-      <section className="antialiased">
-        <ul className="">
-          {allPostsData.map(({ id, date, title }) => (
-            <li className="" key={id}>
-              <BlogTitle blogTitle={title} href={`/posts/${id}`} />
+      <ul className="">
+        {allPostsData.map(({ id, date, title }) => (
+          <li className="" key={id}>
+            <BlogTitle blogTitle={title} href={`/posts/${id}`} />
 
-              <Date dateString={date} />
-            </li>
-          ))}
-        </ul>
-      </section>
+            <Date dateString={date} />
+          </li>
+        ))}
+      </ul>
     </Layout>
   );
 }

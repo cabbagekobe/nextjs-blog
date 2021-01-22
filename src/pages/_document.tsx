@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
         <Head>
         </Head>
 
-        <body>
+        <body className="overflow-y-scroll">
           <Main />
 
           <NextScript />
