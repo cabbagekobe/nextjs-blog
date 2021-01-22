@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
+    "prettier:quick": "pretty-quick --staged",
     "build:rss": "node ./.next/server/scripts/build-rss.js"
   },
   "dependencies": {
