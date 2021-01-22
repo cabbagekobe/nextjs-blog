@@ -21,15 +21,13 @@ export default function Home({ allPostsData }) {
         </title>
       </Head>
 
-      <section className="">
+      <section className="antialiased">
         <ul className="">
           {allPostsData.map(({ id, date, title }) => (
             <li className="" key={id}>
               <BlogTitle blogTitle={title} href={`/posts/${id}`} />
 
               <Date dateString={date} />
-
-              <hr/ >
             </li>
           ))}
         </ul>
