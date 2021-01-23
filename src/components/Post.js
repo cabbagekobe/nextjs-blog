@@ -72,24 +72,21 @@ export default function Post({ meta, children, posts }) {
 
           <dd>
             <ul className="flex justify-center xl:block space-x-8 sm:space-x-12 xl:space-x-0 xl:space-y-8">
-              {meta.authors.map((author) => (
-                <li key={author.twitter} className="flex items-center space-x-2">
-                  <img src={author.avatar} alt="" className="w-10 h-10 rounded-full" />
-                  <dl className="text-sm font-medium leading-5 whitespace-no-wrap">
-                    <dt className="sr-only">Name</dt>
-                    <dd className="text-gray-900">{author.name}</dd>
-                    <dt className="sr-only">Twitter</dt>
-                    <dd>
-                      <a
-                        href={`https://twitter.com/${author.twitter}`}
-                        className="text-teal-500 hover:text-teal-600"
-                      >
-                        {author.twitter}
-                      </a>
-                    </dd>
-                  </dl>
-                </li>
-              ))}
+              <li className="flex items-center space-x-2">
+                <img src="https://pbs.twimg.com/profile_images/578611695599230976/fJ3oNTXZ_400x400.png" alt="" className="w-10 h-10 rounded-full" />
+                <dl className="text-sm font-medium leading-5 whitespace-no-wrap">
+                  <dt className="sr-only">Name</dt>
+                  <dd className="text-gray-900">
+                    キャベツこうべ
+                  </dd>
+                  <dt className="sr-only">Twitter</dt>
+                  <dd>
+                    <a href="https://twitter.com/cabbagekobe" className="text-teal-500 hover:text-teal-600">
+                      @cabbagekobe
+                    </a>
+                  </dd>
+                </dl>
+              </li>
             </ul>
           </dd>
         </dl>
