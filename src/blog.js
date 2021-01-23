@@ -6,4 +6,4 @@ export const Blog = {
   github: "cabbagekobe",
   twitter: "cabbagekobe",
   domain: "cabbagekobe.info",
-}
+};

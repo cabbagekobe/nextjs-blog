@@ -38,9 +38,9 @@ export default function Home() {
                   <dt className="sr-only">Published on</dt>
                   <dd className="text-base leading-6 font-medium text-gray-500">
 
-                  <time dateTime={meta.date}>
-                    {postDateTemplate.render(new Date(meta.date))}
-                  </time>
+                    <time dateTime={meta.date}>
+                      {postDateTemplate.render(new Date(meta.date))}
+                    </time>
                   </dd>
                 </dl>
 

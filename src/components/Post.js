@@ -1,9 +1,9 @@
-import Head from "next/head"
-import PageTitle from "@/components/PageTitle"
-import tinytime from "tinytime"
-import Link from "next/link"
-import { useRouter } from "next/router"
-import { MDXProvider } from "@mdx-js/react"
+import Head from "next/head";
+import PageTitle from "@/components/PageTitle";
+import tinytime from "tinytime";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { MDXProvider } from "@mdx-js/react";
 
 export const mdxComponents = {
   pre: ({ className, ...props }) => (
@@ -12,15 +12,15 @@ export const mdxComponents = {
   "pre.code": ({ className, ...props }) => (
     <code className={`${className} text-gray-200`} {...props} />
   ),
-}
+};
 
-const postDateTemplate = tinytime("{dddd}, {MMMM} {DD}, {YYYY}")
+const postDateTemplate = tinytime("{dddd}, {MMMM} {DD}, {YYYY}");
 
 export default function Post({ meta, children, posts }) {
-  const router = useRouter()
-  const postIndex = posts.findIndex((post) => post.link === router.pathname)
-  const previous = posts[postIndex + 1]
-  const next = posts[postIndex - 1]
+  const router = useRouter();
+  const postIndex = posts.findIndex((post) => post.link === router.pathname);
+  const previous = posts[postIndex + 1];
+  const next = posts[postIndex - 1];
 
   return (
     <article className="xl:divide-y xl:divide-gray-200">
@@ -48,9 +48,9 @@ export default function Post({ meta, children, posts }) {
               <dt className="sr-only">Published on</dt>
               <dd className="text-base leading-6 font-medium text-gray-500">
 
-              <time dateTime={meta.date}>
-                {postDateTemplate.render(new Date(meta.date))}
-              </time>
+                <time dateTime={meta.date}>
+                  {postDateTemplate.render(new Date(meta.date))}
+                </time>
               </dd>
             </div>
           </dl>
@@ -142,5 +142,5 @@ export default function Post({ meta, children, posts }) {
         </footer>
       </div>
     </article>
-  )
+  );
 }
