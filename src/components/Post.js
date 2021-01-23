@@ -14,7 +14,7 @@ export const mdxComponents = {
   ),
 };
 
-const postDateTemplate = tinytime("{dddd}, {MMMM} {DD}, {YYYY}");
+const postDateTemplate = tinytime("{YYYY}.{Mo}.{DD}", { padMonth: true, padDays: true });
 
 export default function Post({ meta, children, posts }) {
   const router = useRouter();
@@ -62,6 +62,7 @@ export default function Post({ meta, children, posts }) {
           </div>
         </div>
       </header>
+
       <div
         className="divide-y xl:divide-y-0 divide-gray-200 xl:grid xl:grid-cols-4 xl:col-gap-6 pb-16 xl:pb-20"
         style={{ gridTemplateRows: "auto 1fr" }}
@@ -92,21 +93,13 @@ export default function Post({ meta, children, posts }) {
             </ul>
           </dd>
         </dl>
+
         <div className="divide-y divide-gray-200 xl:pb-0 xl:col-span-3 xl:row-span-2">
           <div className="prose max-w-none pt-10 pb-8">
             <MDXProvider components={mdxComponents}>{children}</MDXProvider>
           </div>
-          {meta.discussion && (
-            <div className="pt-6 pb-16">
-              <p>
-                Want to talk about this post?{" "}
-                <a href={meta.discussion} className="font-medium text-teal-500 hover:text-teal-600">
-                  Discuss this on GitHub &rarr;
-                </a>
-              </p>
-            </div>
-          )}
         </div>
+
         <footer className="text-sm font-medium leading-5 divide-y divide-gray-200 xl:col-start-1 xl:row-start-2">
           {(next || previous) && (
             <div className="space-y-8 py-8">
@@ -134,6 +127,7 @@ export default function Post({ meta, children, posts }) {
               )}
             </div>
           )}
+
           <div className="pt-8">
             <Link href="/">
               <a className="text-teal-500 hover:text-teal-600">&larr; Back to the blog</a>
