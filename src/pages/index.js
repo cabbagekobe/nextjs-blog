@@ -1,12 +1,12 @@
-import tinytime from 'tinytime'
-import Link from 'next/link'
-import Head from 'next/head'
-import getAllPostPreviews from '@/getAllPostPreviews'
-import twitterCard from '@/img/twitter-card.jpg'
+import tinytime from "tinytime";
+import Link from "next/link";
+import Head from "next/head";
+import getAllPostPreviews from "@/getAllPostPreviews";
+import twitterCard from "@/img/twitter-card.jpg";
 
-const posts = getAllPostPreviews()
+const posts = getAllPostPreviews();
 
-const postDateTemplate = tinytime('{MMMM} {DD}, {YYYY}')
+const postDateTemplate = tinytime("{MMMM} {DD}, {YYYY}");
 
 export default function Home() {
   return (
@@ -59,9 +59,9 @@ export default function Home() {
                 </div>
               </article>
             </li>
-          )
+          );
         })}
       </ul>
     </div>
-  )
+  );
 }

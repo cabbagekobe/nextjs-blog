@@ -3,19 +3,19 @@ import NextDocument, {
   Head,
   Main,
   NextScript
-} from 'next/document'
+} from "next/document";
 
-import * as fs from 'fs'
-import * as path from 'path'
+import * as fs from "fs";
+import * as path from "path";
 
 class InlineStylesHead extends Head {
   getCssLinks() {
-    return this.__getInlineStyles()
+    return this.__getInlineStyles();
   }
 
   __getInlineStyles() {
-    const { assetPrefix, files } = this.context._documentProps
-    if (!files || files.length === 0) return null
+    const { assetPrefix, files } = this.context._documentProps;
+    if (!files || files.length === 0) return null;
 
     return files
       .filter((file) => /\.css$/.test(file))
@@ -25,17 +25,19 @@ class InlineStylesHead extends Head {
           nonce={this.props.nonce}
           data-href={`${assetPrefix}/_next/${file}`}
           dangerouslySetInnerHTML={{
-            __html: fs.readFileSync(path.join(process.cwd(), '.next', file), 'utf-8'),
+            __html: fs.readFileSync(path.join(process.cwd(), ".next", file), "utf-8"),
           }}
         />
-      ))
+      ));
   }
 }
 
 export default class Document extends NextDocument {
   static async getInitialProps(ctx) {
-    const initialProps = await NextDocument.getInitialProps(ctx)
-    return { ...initialProps }
+    const initialProps = await NextDocument.getInitialProps(ctx);
+    return {
+      ...initialProps
+    };
   }
 
   render() {
@@ -49,6 +51,6 @@ export default class Document extends NextDocument {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }

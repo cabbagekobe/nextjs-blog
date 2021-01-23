@@ -1,20 +1,20 @@
-import Head from 'next/head'
-import PageTitle from '@/components/PageTitle'
-import tinytime from 'tinytime'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { MDXProvider } from '@mdx-js/react'
+import Head from "next/head"
+import PageTitle from "@/components/PageTitle"
+import tinytime from "tinytime"
+import Link from "next/link"
+import { useRouter } from "next/router"
+import { MDXProvider } from "@mdx-js/react"
 
 export const mdxComponents = {
   pre: ({ className, ...props }) => (
     <pre className={`${className} rounded-md bg-gray-800 py-3 px-4 overflow-x-auto`} {...props} />
   ),
-  'pre.code': ({ className, ...props }) => (
+  "pre.code": ({ className, ...props }) => (
     <code className={`${className} text-gray-200`} {...props} />
   ),
 }
 
-const postDateTemplate = tinytime('{dddd}, {MMMM} {DD}, {YYYY}')
+const postDateTemplate = tinytime("{dddd}, {MMMM} {DD}, {YYYY}")
 
 export default function Post({ meta, children, posts }) {
   const router = useRouter()
@@ -64,7 +64,7 @@ export default function Post({ meta, children, posts }) {
       </header>
       <div
         className="divide-y xl:divide-y-0 divide-gray-200 xl:grid xl:grid-cols-4 xl:col-gap-6 pb-16 xl:pb-20"
-        style={{ gridTemplateRows: 'auto 1fr' }}
+        style={{ gridTemplateRows: "auto 1fr" }}
       >
         <dl className="pt-6 pb-10 xl:pt-11 xl:border-b xl:border-gray-200">
           <dt className="sr-only">Authors</dt>
@@ -99,7 +99,7 @@ export default function Post({ meta, children, posts }) {
           {meta.discussion && (
             <div className="pt-6 pb-16">
               <p>
-                Want to talk about this post?{' '}
+                Want to talk about this post?{" "}
                 <a href={meta.discussion} className="font-medium text-teal-500 hover:text-teal-600">
                   Discuss this on GitHub &rarr;
                 </a>
