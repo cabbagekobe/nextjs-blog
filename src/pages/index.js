@@ -6,7 +6,7 @@ import twitterCard from "@/img/twitter-card.jpg";
 
 const posts = getAllPostPreviews();
 
-const postDateTemplate = tinytime("{MMMM} {DD}, {YYYY}");
+const postDateTemplate = tinytime("{YYYY}.{Mo}.{DD}", { padMonth: true, padDays: true });
 
 export default function Home() {
   return (
@@ -51,10 +51,6 @@ export default function Home() {
                         <a className="text-gray-900">{meta.title}</a>
                       </Link>
                     </h2>
-
-                    <div className="prose max-w-none text-gray-500">
-                      <Component />
-                    </div>
                   </div>
                 </div>
               </article>
