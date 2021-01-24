@@ -46,7 +46,7 @@ const create = async () => {
     .replace(/TEMPLATE_DATE/, new Date().toISOString())
     .replace(/TEMPLATE_NAME/, answer);
 
-  await fs.ensureDir(dirPath)
+  await fs.ensureDir(dirPath);
   await fs.writeFile(filePath, content);
 
   console.log(chalk.cyan("  Successful. Enjoy.\n"));
