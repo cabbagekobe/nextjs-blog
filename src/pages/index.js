@@ -1,28 +1,30 @@
-import tinytime from "tinytime";
 import Link from "next/link";
 import Head from "next/head";
 import getAllPostPreviews from "@/getAllPostPreviews";
 
+import { Blog } from '@/blog'
+
+import PostDateTime from "@/components/PostDateTime";
+
 const posts = getAllPostPreviews();
 
-const postDateTemplate = tinytime("{YYYY}.{Mo}.{DD}", { padMonth: true, padDays: true });
 
 export default function Home() {
   return (
     <div className="divide-y divide-gray-200">
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@tailwindcss" />
-        <meta name="twitter:creator" content="@tailwindcss" />
-        <meta name="twitter:title" content="Blog – Tailwind CSS" />
+        <meta name="twitter:site" content="@cabbagekobe" />
+        <meta name="twitter:creator" content="@cabbagekobe" />
+        <meta name="twitter:title" content={Blog.title} />
         <meta name="twitter:description" content="News content from the Tailwind CSS team." />
 
-        <meta property="og:url" content="https://blog.tailwindcss.com" />
+        <meta property="og:url" content={Blog.url} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="Blog – Tailwind CSS" />
+        <meta property="og:title" content={Blog.title} />
         <meta property="og:description" content="News content from the Tailwind CSS team." />
 
-        <title>Blog – Tailwind CSS</title>
+        <title>{Blog.title}</title>
         <meta name="description" content="News content from the Tailwind CSS team." />
       </Head>
 
@@ -35,9 +37,9 @@ export default function Home() {
                   <dt className="sr-only">Published on</dt>
                   <dd className="text-base leading-6 font-medium text-gray-500">
 
-                    <time dateTime={meta.date}>
-                      {postDateTemplate.render(new Date(meta.date))}
-                    </time>
+                    <PostDateTime>
+                      {meta.date}
+                    </PostDateTime>
                   </dd>
                 </dl>
 
@@ -45,7 +47,9 @@ export default function Home() {
                   <div className="space-y-6">
                     <h2 className="text-2xl leading-8 font-bold tracking-tight">
                       <Link href={link}>
-                        <a className="text-gray-900">{meta.title}</a>
+                        <a className="text-gray-900 hover:text-gray-700">
+                          {meta.title}
+                        </a>
                       </Link>
                     </h2>
                   </div>

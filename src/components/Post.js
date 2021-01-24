@@ -1,9 +1,13 @@
 import Head from "next/head";
-import PageTitle from "@/components/PageTitle";
-import tinytime from "tinytime";
 import Link from "next/link";
+
+import { Blog } from '@/blog'
+
 import { useRouter } from "next/router";
 import { MDXProvider } from "@mdx-js/react";
+
+import PageTitle from "@/components/PageTitle";
+import PostDateTime from "@/components/PostDateTime";
 
 export const mdxComponents = {
   pre: ({ className, ...props }) => (
@@ -25,7 +29,7 @@ export default function Post({ meta, children, posts }) {
   return (
     <article className="xl:divide-y xl:divide-gray-200">
       <Head>
-        <title>{meta.title} – Tailwind CSS</title>
+        <title>{meta.title} – {Blog.title}</title>
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@tailwindcss" />
         <meta name="twitter:creator" content="@tailwindcss" />
@@ -48,27 +52,24 @@ export default function Post({ meta, children, posts }) {
               <dt className="sr-only">Published on</dt>
               <dd className="text-base leading-6 font-medium text-gray-500">
 
-                <time dateTime={meta.date}>
-                  {postDateTemplate.render(new Date(meta.date))}
-                </time>
+                <PostDateTime>
+                  {meta.date}
+                </PostDateTime>
               </dd>
             </div>
           </dl>
 
-          <div>
-            <PageTitle>
-              {meta.title}
-            </PageTitle>
-          </div>
+          <PageTitle>
+            {meta.title}
+          </PageTitle>
         </div>
       </header>
 
-      <div
-        className="divide-y xl:divide-y-0 divide-gray-200 xl:grid xl:grid-cols-4 xl:col-gap-6 pb-16 xl:pb-20"
-        style={{ gridTemplateRows: "auto 1fr" }}
-      >
+      <div className="divide-y xl:divide-y-0 divide-gray-200 xl:grid xl:grid-cols-4 xl:col-gap-6 pb-16 xl:pb-20" style={{ gridTemplateRows: "auto 1fr" }} >
         <dl className="pt-6 pb-10 xl:pt-11 xl:border-b xl:border-gray-200">
-          <dt className="sr-only">Authors</dt>
+          <dt className="sr-only">
+            Authors
+          </dt>
 
           <dd>
             <ul className="flex justify-center xl:block space-x-8 sm:space-x-12 xl:space-x-0 xl:space-y-8">
