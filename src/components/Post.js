@@ -18,8 +18,6 @@ export const mdxComponents = {
   ),
 };
 
-const postDateTemplate = tinytime("{YYYY}.{Mo}.{DD}", { padMonth: true, padDays: true });
-
 export default function Post({ meta, children, posts }) {
   const router = useRouter();
   const postIndex = posts.findIndex((post) => post.link === router.pathname);

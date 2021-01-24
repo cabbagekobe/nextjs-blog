@@ -8,7 +8,14 @@ module.exports = {
       extractors: [
         {
           extensions: ["mdx"],
-          extractor: (content) => { },
+          extractor: (content) => {
+            content = mdx.sync(content);
+
+            const broadMatches = content.match(/[^<>""`\s]*[^<>""`\s:]/g) || [];
+            const innerMatches = content.match(/[^<>""`\s.(){}[\]#=%]*[^<>""`\s.(){}[\]#=%:]/g) || [];
+
+            return broadMatches.concat(innerMatches);
+          },
         },
       ],
     },

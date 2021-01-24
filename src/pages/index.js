@@ -8,7 +8,6 @@ import PostDateTime from "@/components/PostDateTime";
 
 const posts = getAllPostPreviews();
 
-
 export default function Home() {
   return (
     <div className="divide-y divide-gray-200">
