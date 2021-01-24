@@ -6,7 +6,7 @@ import SectionContainer from "@/components/SectionContainer";
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className="antialiased">
+    <>
       <Head>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -20,19 +20,17 @@ export default function App({ Component, pageProps }) {
         <link rel="alternate" type="application/json" title="JSON Feed" href="/feed.json" />
       </Head>
 
-      <SectionContainer>
+      <div className="flex flex-col min-h-screen">
         <Header />
-      </SectionContainer>
 
-      <SectionContainer>
-        <main>
-          <Component {...pageProps} />
-        </main>
-      </SectionContainer>
+        <SectionContainer>
+          <main>
+            <Component {...pageProps} />
+          </main>
+        </SectionContainer>
 
-      <SectionContainer>
         <Footer />
-      </SectionContainer>
-    </div>
+      </div>
+    </>
   );
 }

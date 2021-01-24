@@ -46,8 +46,9 @@ export default class Document extends NextDocument {
         <InlineStylesHead>
         </InlineStylesHead>
 
-        <body>
+        <body className="overflow-y-scroll">
           <Main />
+
           <NextScript />
         </body>
       </Html>
