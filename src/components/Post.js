@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 
-import { Blog } from '@/blog'
+import { Blog } from "@/blog";
 
 import { useRouter } from "next/router";
 import { MDXProvider } from "@mdx-js/react";
