@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Blog } from '@/blog'
+import { Blog } from "@/blog";
 
 export default function Header() {
   return (

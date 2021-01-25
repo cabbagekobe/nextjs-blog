@@ -1,4 +1,4 @@
-import { Blog } from '@/blog'
+import { Blog } from "@/blog";
 
 export default function Footer() {
   return (

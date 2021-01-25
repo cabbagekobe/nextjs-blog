@@ -2,7 +2,7 @@ import Link from "next/link";
 import Head from "next/head";
 import getAllPostPreviews from "@/getAllPostPreviews";
 
-import { Blog } from '@/blog'
+import { Blog } from "@/blog";
 
 import PostDateTime from "@/components/PostDateTime";
 
