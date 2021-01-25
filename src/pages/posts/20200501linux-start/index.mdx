@@ -138,3 +138,9 @@ export const meta = {
     wget http://zoom.us/client/latest/zoom_amd64.deb
     sudo apt install ./zoom_amd64.deb
 
+    # gh – The GitHub CLI toolのインストール
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+    sudo apt-add-repository https://cli.github.com/packages
+    sudo apt update
+    sudo apt install gh
+

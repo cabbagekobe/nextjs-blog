@@ -1,7 +1,11 @@
 {
-  "name": "tailwind-blog",
-  "version": "0.1.0",
+  "name": "cabbagekobe.info",
+  "version": "0.0.1",
   "private": true,
+  "author": {
+    "name": "cabbagekobe",
+    "url": "https://cabbagekobe.info"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
