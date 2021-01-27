@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-import { MDXProvider } from '@mdx-js/react'
+import {
+  MDXProvider
+} from '@mdx-js/react'
 
 export const mdxComponents = {
   pre: ({ className, ...props }) => (

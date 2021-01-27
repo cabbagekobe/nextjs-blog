@@ -26,7 +26,7 @@ module.exports = withBundleAnalyzer({
             ...mdx,
             createLoader(function (src) {
               const content = [
-                'import Post from "../../../components/Post"',
+                'import Post from "@/components/Post"',
                 src,
                 'export default Post',
               ].join('\n')
