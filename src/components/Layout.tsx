@@ -17,13 +17,15 @@ const Layout = ({ children, title = 'This is the default title' }: Props): JSX.E
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
 
-    <Header />
+    <div className="flex flex-col min-h-screen">
+      <Header />
 
-    <main>
-      {children}
-    </main>
+      <main>
+        {children}
+      </main>
 
-    <Footer />
+      <Footer />
+    </div>
   </>
 )
 
