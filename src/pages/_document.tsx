@@ -8,7 +8,7 @@ import NextDocument, {
 class Document extends NextDocument {
   render() {
     return (
-      <Html lang="jp">
+      <Html lang="ja">
         <Head />
 
         <body className="overflow-y-scroll">
