@@ -14,9 +14,8 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-      <title>{Site.title}</title>
+        <title>{Site.title}</title>
       </Head>
-
 
       <SectionContainer>
         <ul>
@@ -24,17 +23,19 @@ export default function Home() {
             return (
               <li key={link}>
                 <article>
-                  <h2>
-                    <Link href={link}>
-                      <a>
-                        {meta.title}
-                      </a>
-                    </Link>
-                  </h2>
+                  <header>
+                    <time>
+                      {meta.date}
+                    </time>
 
-                  <time>
-                    {meta.date}
-                  </time>
+                    <h1>
+                      <Link href={link}>
+                        <a>
+                          {meta.title}
+                        </a>
+                      </Link>
+                    </h1>
+                  </header>
                 </article>
 
                 <hr />

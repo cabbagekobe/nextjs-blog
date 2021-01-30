@@ -1,5 +1,9 @@
+import { useEffect } from 'react';
 import Head from 'next/head'
 import Link from 'next/link'
+
+import Layout from '@/components/Layout'
+import SectionContainer from '@/components/SectionContainer'
 
 import {
   MDXProvider
@@ -15,23 +19,38 @@ export const mdxComponents = {
 }
 
 export default function Post({ meta, children }) {
+  useEffect(() => {
+    const s = document.createElement("script");
+    s.setAttribute("src", "https://platform.twitter.com/widgets.js");
+    s.setAttribute("async", "true");
+    document.head.appendChild(s);
+  },[])
+
   return (
-    <article>
-      <header>
-        <h1>
-          {meta.title}
-        </h1>
+    <Layout>
+      <SectionContainer>
+        <article>
+          <header>
+            <time>
+              {meta.date}
+            </time>
 
-        <time>
-          {meta.date}
-        </time>
-      </header>
+            <h1>
+              {meta.title}
+            </h1>
+          </header>
 
-      <div>
-        <MDXProvider components={mdxComponents}>
-          {children}
-        </MDXProvider>
-      </div>
-    </article>
+          <main>
+            <MDXProvider components={mdxComponents}>
+              {children}
+            </MDXProvider>
+          </main>
+
+          <footer>
+            TODO: Post Navigation
+          </footer>
+        </article>
+      </SectionContainer>
+    </Layout>
   )
 }
