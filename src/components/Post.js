@@ -1,9 +1,12 @@
 import { useEffect } from 'react';
+import { useRouter } from 'next/router'
+
 import Head from 'next/head'
 import Link from 'next/link'
 
 import Layout from '@/components/Layout'
 import SectionContainer from '@/components/SectionContainer'
+import PostHeader from '@/components/PostHeader'
 
 import {
   MDXProvider
@@ -19,6 +22,8 @@ export const mdxComponents = {
 }
 
 export default function Post({ meta, children }) {
+  const router = useRouter()
+
   useEffect(() => {
     const s = document.createElement("script");
     s.setAttribute("src", "https://platform.twitter.com/widgets.js");
@@ -30,15 +35,7 @@ export default function Post({ meta, children }) {
     <Layout>
       <SectionContainer>
         <article>
-          <header>
-            <time>
-              {meta.date}
-            </time>
-
-            <h1>
-              {meta.title}
-            </h1>
-          </header>
+          <PostHeader title={meta.title} date={meta.date} link={router.pathname} />
 
           <main>
             <MDXProvider components={mdxComponents}>

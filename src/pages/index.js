@@ -5,6 +5,7 @@ import getAllPosts from "@/lib/getAllPosts"
 
 import Layout from '@/components/Layout'
 import SectionContainer from '@/components/SectionContainer'
+import PostHeader from '@/components/PostHeader'
 
 import { Site } from "@/site.config";
 
@@ -23,19 +24,7 @@ export default function Home() {
             return (
               <li key={link}>
                 <article>
-                  <header>
-                    <time>
-                      {meta.date}
-                    </time>
-
-                    <h1>
-                      <Link href={link}>
-                        <a>
-                          {meta.title}
-                        </a>
-                      </Link>
-                    </h1>
-                  </header>
+                  <PostHeader title={meta.title} date={meta.date} link={link} />
                 </article>
 
                 <hr />
