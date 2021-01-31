@@ -1,0 +1,38 @@
+export const meta = {
+  title: '家に転がっているMacBookを簡単にサーバにしておく',
+  date: '2021-01-31T14:28:12.263Z',
+  description: '',
+}
+
+# 家に転がっているMacBookを簡単にサーバにしておく
+
+だれもの家に転がっているもう使わなくなったMacBook、そのMacBook、簡単にサーバとしてつかえるようにしておきましょう。
+
+とはいえ、完全なサーバとして運用するのはノートPCはサーバ向けハードというわけではないのであまりオススメしません。  
+（検索すると火事になったー！！とか出てくるけどそのページはVPS比較のアフィサイトなので眉唾と思いつつ同意する部分もある）
+
+```
+    # とりあえずソフトウェアの更新
+    yes | sudo apt update && yes | sudo apt upgrade && yes | sudo apt autoremove
+
+    # Mac系列にUbuntu系のディストリをいれて下記のエラーが表示される場合 sudo su -以降のコマンドを入れる
+    Failed to Set MokListRT: Invalid Parameter
+    Could not create mokListRT: Invalid Parameter
+    Importing MOK states has failed: import_mok_state() failed: Invalid Parameter
+    Continuing boot since secure mode is disabled.
+
+    sudo su -
+    cd /boot/efi/EFI/ubuntu
+    cp grubx64.efi shimx64.efi
+    reboot
+
+    # grubx64.efiをshimx64.efiにコピーして置き換える必要がある。
+
+    # SSHキーの登録
+    curl https://github.com/cabbagekobe.keys >> ~/.ssh/authorized_keys
+
+    # PC閉じたときのサスペンドの無効化
+    sudo vi /etc/systemd/logind.conf
+    - #HandleLidSwitch=suspend
+    + HandleLidSwitch=ignore
+```
