@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
-import getAllPostPreviews from "@/getAllPostPreviews";
+import getAllPostPreviews from "@/lib/getAllPostPreviews";
 
 import { Blog } from "@/blog";
 
@@ -12,19 +12,7 @@ export default function Home() {
   return (
     <div className="divide-y divide-gray-200">
       <Head>
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@cabbagekobe" />
-        <meta name="twitter:creator" content="@cabbagekobe" />
-        <meta name="twitter:title" content={Blog.title} />
-        <meta name="twitter:description" content="News content from the Tailwind CSS team." />
-
-        <meta property="og:url" content={Blog.url} />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content={Blog.title} />
-        <meta property="og:description" content="News content from the Tailwind CSS team." />
-
         <title>{Blog.title}</title>
-        <meta name="description" content="News content from the Tailwind CSS team." />
       </Head>
 
       <ul className="divide-y divide-gray-200">

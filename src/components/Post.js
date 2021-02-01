@@ -1,9 +1,11 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/router'
+
 import Head from "next/head";
 import Link from "next/link";
 
 import { Blog } from "@/blog";
 
-import { useRouter } from "next/router";
 import { MDXProvider } from "@mdx-js/react";
 
 import PageTitle from "@/components/PageTitle";
@@ -24,23 +26,17 @@ export default function Post({ meta, children, posts }) {
   const previous = posts[postIndex + 1];
   const next = posts[postIndex - 1];
 
+  useEffect(() => {
+    const s = document.createElement("script");
+    s.setAttribute("src", "https://platform.twitter.com/widgets.js");
+    s.setAttribute("async", "true");
+    document.head.appendChild(s);
+  },[])
+
   return (
     <article className="xl:divide-y xl:divide-gray-200">
       <Head>
         <title>{meta.title} – {Blog.title}</title>
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@tailwindcss" />
-        <meta name="twitter:creator" content="@tailwindcss" />
-        <meta name="twitter:title" content={`${meta.title} – Tailwind CSS`} />
-        <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={`https://blog.tailwindcss.com${meta.image}`} />
-
-        <meta property="og:url" content={`https://blog.tailwindcss.com${router.pathname}`} />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content={`${meta.title} – Tailwind CSS`} />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:image" content={`https://blog.tailwindcss.com${meta.image}`} />
-        <meta name="description" content={meta.description}></meta>
       </Head>
 
       <header className="pt-6 xl:pb-10">
@@ -78,6 +74,7 @@ export default function Post({ meta, children, posts }) {
                   <dd className="text-gray-900">
                     キャベツこうべ
                   </dd>
+
                   <dt className="sr-only">Twitter</dt>
                   <dd>
                     <a href="https://twitter.com/cabbagekobe" className="text-teal-500 hover:text-teal-600">
