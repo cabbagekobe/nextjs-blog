@@ -13,8 +13,14 @@ function dateSortDesc(a, b) {
   return 0;
 }
 
-export default function getAllPosts() {
-  return importAll(require.context("../pages/", true, /\.mdx$/)).sort((a, b) =>
+export default function getAllPostPreviews() {
+  return importAll(require.context("./pages/?preview", true, /\.mdx$/)).sort((a, b) =>
+    dateSortDesc(a.module.meta.date, b.module.meta.date)
+  );
+}
+
+export function getAllPosts() {
+  return importAll(require.context("./pages/?rss", true, /\.mdx$/)).sort((a, b) =>
     dateSortDesc(a.module.meta.date, b.module.meta.date)
   );
 }

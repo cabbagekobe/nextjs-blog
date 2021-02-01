@@ -1,9 +1,9 @@
-import getAllPosts from "@/lib/getAllPosts";
+import getAllPostPreviews from "@/getAllPostPreviews";
 
 export async function getStaticProps() {
   return {
     props: {
-      posts: getAllPosts().map((post) => ({
+      posts: getAllPostPreviews().map((post) => ({
         title: post.module.meta.title,
         link: post.link,
       })),
