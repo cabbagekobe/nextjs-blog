@@ -1,4 +1,4 @@
-export const Site = {
+export const Blog = {
   author: "キャベツこうべ",
   title: "cabbagekobe.info",
   language: "ja",
