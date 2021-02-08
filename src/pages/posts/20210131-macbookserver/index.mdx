@@ -67,7 +67,6 @@ sudo systemctl status docker
 ## ユーザーをdockerグループに追加(dockerコマンドを実行するたびに sudoを入力しないようにする)
 sudo usermod -aG docker ${USER}
 
-
 ## docker-composeのインストール( 1.28.2の部分は https://github.com/docker/compose/releases を確認)
 sudo curl -L "https://github.com/docker/compose/releases/download/1.28.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
