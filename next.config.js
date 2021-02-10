@@ -76,7 +76,7 @@ module.exports = withBundleAnalyzer({
                 "export default Post",
               ].join("\n");
 
-              return content
+              return content;
             }),
           ],
         },

@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router'
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 import Head from "next/head";
 import Link from "next/link";
@@ -31,7 +31,7 @@ export default function Post({ meta, children, posts }) {
     s.setAttribute("src", "https://platform.twitter.com/widgets.js");
     s.setAttribute("async", "true");
     document.head.appendChild(s);
-  },[])
+  },[]);
 
   return (
     <article className="xl:divide-y xl:divide-gray-200">
