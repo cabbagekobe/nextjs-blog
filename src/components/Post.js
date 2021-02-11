@@ -60,7 +60,7 @@ export default function Post({ meta, children, posts }) {
       </header>
 
       <div className="divide-y xl:divide-y-0 divide-gray-200 xl:grid xl:grid-cols-4 xl:col-gap-6 pb-16 xl:pb-20" style={{ gridTemplateRows: "auto 1fr" }} >
-        <dl className="pt-6 pb-10 xl:pt-11 xl:border-b xl:border-gray-200">
+        <dl className="pt-6 pb-10 xl:pt-10 xl:mr-4 xl:border-b xl:border-gray-200">
           <dt className="sr-only">
             Authors
           </dt>
@@ -93,7 +93,7 @@ export default function Post({ meta, children, posts }) {
           </div>
         </div>
 
-        <footer className="text-sm font-medium leading-5 divide-y divide-gray-200 xl:col-start-1 xl:row-start-2">
+        <footer className="text-sm font-medium leading-5 divide-y divide-gray-200 xl:col-start-1 xl:row-start-2 xl:mr-4">
           {(next || previous) && (
             <div className="space-y-8 py-8">
               {next && (
