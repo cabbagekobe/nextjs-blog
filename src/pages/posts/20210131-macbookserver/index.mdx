@@ -72,4 +72,19 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.28.2/docker-
 
 ## docker-composeの権限変更
 sudo chmod +x /usr/local/bin/docker-compose
+
+## sambaのインストール
+sudo apt -y install samba
+
+## samba共有用のディレクトリ作成
+sudo mkdir /home/share
+sudo chmod 777 /home/share
+
+## samba設定ファイル記入
+sudo vim /etc/samba/smb.conf
+
+## samba再起動と自動起動の設定
+sudo systemctl restart smbd
+sudo systemctl enable smbd
+
 ```
