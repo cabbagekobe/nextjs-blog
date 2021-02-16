@@ -37,6 +37,10 @@ export default function Post({ meta, children, posts }) {
     <article className="xl:divide-y xl:divide-gray-200">
       <Head>
         <title>{meta.title} – {Blog.title}</title>
+
+        <description>
+          {meta.description ? meta.description : Blog.description}
+        </description>
       </Head>
 
       <header className="pt-6 xl:pb-10">

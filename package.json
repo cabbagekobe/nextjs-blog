@@ -19,18 +19,18 @@
   "dependencies": {
     "@mapbox/rehype-prism": "^0.5.0",
     "@mdx-js/loader": "^1.6.6",
-    "@next/mdx": "^10.0.6",
+    "@next/mdx": "^10.0.7",
     "@tailwindcss/typography": "^0.4.0",
     "@tailwindcss/ui": "^0.7.2",
     "@types/node": "^14.14.28",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
-    "@typescript-eslint/eslint-plugin": "^4.14.0",
-    "@typescript-eslint/parser": "^4.14.0",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
     "autoprefixer": "^10.2.4",
     "eslint": "^7.20.0",
     "eslint-plugin-react": "^7.22.0",
-    "next": "^10.0.6",
+    "next": "^10.0.7",
     "npm-check": "^5.9.2",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
@@ -42,7 +42,7 @@
     "typescript": "^4.1.5"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^10.0.6",
+    "@next/bundle-analyzer": "^10.0.7",
     "feed": "^4.2.1",
     "file-loader": "^6.0.0",
     "simple-functional-loader": "^1.2.1"

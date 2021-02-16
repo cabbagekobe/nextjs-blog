@@ -13,6 +13,8 @@ export default function Home() {
     <div className="divide-y divide-gray-200">
       <Head>
         <title>{Blog.title}</title>
+
+        <description>{Blog.description}</description>
       </Head>
 
       <ul className="divide-y divide-gray-200">
