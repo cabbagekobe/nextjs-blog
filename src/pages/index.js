@@ -14,7 +14,7 @@ export default function Home() {
       <Head>
         <title>{Blog.title}</title>
 
-        <description>{Blog.description}</description>
+        <meta name="description" content={Blog.description} />
       </Head>
 
       <ul className="divide-y divide-gray-200">

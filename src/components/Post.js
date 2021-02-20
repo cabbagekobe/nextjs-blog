@@ -38,9 +38,7 @@ export default function Post({ meta, children, posts }) {
       <Head>
         <title>{meta.title} – {Blog.title}</title>
 
-        <description>
-          {meta.description ? meta.description : Blog.description}
-        </description>
+        <meta name="description" content={meta.description ? meta.description : Blog.description} />
       </Head>
 
       <header className="pt-6 xl:pb-10">
