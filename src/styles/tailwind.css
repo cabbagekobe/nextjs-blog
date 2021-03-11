@@ -4,3 +4,9 @@
 
 @tailwind components;
 @tailwind utilities;
+
+/*  */
+.postContent h2 {
+  @apply border-b-2;
+  @apply border-gray-400;
+}
